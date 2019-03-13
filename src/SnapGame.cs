@@ -26,7 +26,6 @@ namespace CardGames
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
 				myGame.Start ();
-				
 			}
 		}
 
@@ -58,38 +57,6 @@ namespace CardGames
 			//Draw onto the screen
 			SwinGame.RefreshScreen(60);
 		}
-
-		/// <summary>
-		/// Respond to the user input -- with requests affecting myGame
-		/// </summary>
-		/// <param name="myGame">The game object to update in response to events.</param>
-		private static void HandleUserInput(Snap myGame)
-		{
-			//Fetch the next batch of UI interaction
-			SwinGame.ProcessEvents();
-
-			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
-			{
-				myGame.FlipNextCard ();
-			}
-
-			if (myGame.IsStarted) 
-			{ 
-				if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) 
-				{ 
-					//TODO: add sound effects 
-				} 
-				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT)) 
-				{ 
-					myGame.PlayerHit (1); 
-				} 
-				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) 
-				{ 
-					myGame.PlayerHit (2); 
-				}
-			}
-		}
-
 
 
 		/// <summary>
